@@ -4,7 +4,7 @@ let min = 0;
 let max = 100;
 let counter = 0;
 let computerGuess;
-const feedback = document.querySelector(".feedback");
+// let feedback = document.querySelector(".feedback");
 
 
 //Fjerner alt andet end start spil-knappen
