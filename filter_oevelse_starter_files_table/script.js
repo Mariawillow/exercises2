@@ -11,18 +11,40 @@ const vehicles = [
   { type: "Løbehjul", passengers: 1, isElectric: true },
 ];
 const tbodyPointer = document.querySelector("tbody");
+const alleElDrevneFartoejer = vehicles.filter((vehicles)=>vehicles.isElectric);
+const alleFartoejerMedMereEndToSaeder = vehicles.filter((vehicles)=>vehicles.passengers > 2);
+const alleFartoejerDerErEjetAfJonas = vehicles.filter((vehicles)=>vehicles.ownedBy === "Jonas" && vehicles.isElectric);
+const alleFartoejerDerErEjetAfMereEndEn = vehicles.filter((vehicles)=>vehicles.fuel === "Rugbrød" && vehicles.passengers > 1);
+
+
 showTheseVehicles(vehicles);
 
 function showTheseVehicles(arr) {
   arr.forEach((each) => {
+    console.log(arr)
     tbodyPointer.innerHTML += `<tr>
-  <td>${each.type}</td>
-  <td>${each.fuel}</td>
-  <td>${each.passengers}</td> 
-  <td>${each.stops}</td>
-  <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
+  <td>${beautify.type}</td>
+  <td>${beautify.fuel}</td>
+  <td>${beautify.passengers}</td> 
+  <td>${beautify.stops}</td>
+  <td>${beautify.ownedBy}</td>
+  <td>${beautify.isElectric}</td>
+  <td>${beautify.isTandem}</td>
 </tr>`;
   });
-}
+  // document.querySelector("td").forEach((cell) => {
+  //   if (cell.textContent === "undefined") {
+  //     cell.textContent = "";
+  //   }
+  // });
+
+  function beautify(str) {
+if (str === undefined){
+  str = "-";
+  if (str === "X"){
+    str = "-";
+} return str;
+  }
+}}
+
+
