@@ -1,20 +1,21 @@
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 background-color: rgb(210, 191, 191) ;
-padding-left: 1rem;
 }
-p{
 
-}
 
 header {
-    padding-bottom: 10px;
 font-size: xx-large;
+background-color: chocolate;
+margin: 10px;
+text-align: center;
 }
 
 footer{
-    padding-bottom: 10px;
     font-size: xx-large;
+    background-color: rgba(210, 207, 30, 0.64);
+margin: 10px;
+text-align: center;
 }
 
 select{
