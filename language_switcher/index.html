@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Switcher</title>
     <script type="module" src="js.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="swiftLanguage">
-        <button onclick="dropDown()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#Dansk">DA</a>
-          <a href="#Engelsk">EN </a>
-        </div>
-      </div>
+    <header class="header"></header>
+    <main>
 
-    <header class="header">UDSKIFTES</header>
-    <p>Content</p>
-    <div class="footer">UDSKIFTES</div>
+        <label for="languageSelect">Choose:</label>
+        <select id="select">
+            <option class="da">Dansk</option>
+            <option class="de">Tysk</option>
+        </select>
 
+        <p>Content</p>
+    </main>
+    <footer class="footer"></footer>
 
 </body>
 

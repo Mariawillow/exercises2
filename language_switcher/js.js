@@ -13,21 +13,31 @@ const texts = {
     ],
   },
 };
-const locale = "da";
+
+document.querySelector(".da").addEventListener("click", visDa);
+
+  function visDa (){
+    texts.da.texts.forEach(({ text, location}) =>{
+      const element = document.querySelector(location);
+      if (element){
+        element.textContent = text;
+      }
+    });
+  }
 
 
-document.querySelector(".swiftLanguageEng").addEventListener("click",swift);
-document.querySelector(".swiftLanguageDa").addEventListener("click",swift);
+document.querySelector(".de").addEventListener("click", visDe);
 
-
-function swiftLanguageEng(){
-  userChoice = "Engelsk"
-  console.log("swiftLang")
+function visDe (){
+  texts.de.texts.forEach(({ text, location}) =>{
+    const element = document.querySelector(location);
+    if (element){
+      element.textContent = text;
+    }
+  });
 }
 
-function swiftLanguageDa(){
-  userChoice = "Tysk"
-  console.log("swift")
-}
+
+
 
 
