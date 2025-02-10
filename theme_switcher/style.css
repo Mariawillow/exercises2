@@ -1,0 +1,65 @@
+.grid_1_1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+body[data-filters="Lys"]{
+    --background-bg: antiquewhite;
+    --h1-bg: brown;
+    --footer-bg:rgb(245, 220, 138) ;
+    --footer-p: rgb(255, 255, 255) ;
+    --choose: rgb(148, 148, 148) ;
+    --select: rgb(239, 168, 92);
+}
+
+body[data-filters="Moerk"]{
+    --background-bg: rgb(106, 100, 92);
+    --h1-bg: rgb(226, 186, 186);
+    --footer-bg:rgb(46, 44, 38) ;
+    --footer-p: rgb(151, 106, 106) ;
+    --choose: rgb(189, 189, 189) ;
+    --select: rgb(129, 96, 61);
+}
+
+body[data-filters="Farverig"]{
+    --background-bg: rgb(230, 146, 140);
+    --h1-bg: rgb(202, 240, 105);
+    --footer-bg:rgb(79, 208, 215) ;
+    --footer-p: rgb(131, 100, 232) ;
+    --choose: rgb(126, 52, 120) ;
+    --select: rgb(66, 197, 147);
+}
+
+h1{
+    font-family: monospace;
+    color: var(--h1-bg);
+}
+body{
+    background-color: var(--background-bg);
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 50px;
+    font-size: xx-large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--footer-bg);
+    color: var(--footer-p);
+}
+
+label{
+    color: var(--choose);
+}
+
+select{
+    padding: 5px;
+    background-color: var(--select);
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+
+
