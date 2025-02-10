@@ -7,8 +7,16 @@
 
 // Make sure that it also works with longer names. Don't worry about names shorter than 3 characters.
 
+// vi har vores string hvor der står mona i
 const str = "MonA";
+//kort forklaring til hvorfor vi bruger substring:
+//returns the part of this string from the start index up to and excluding the end index.
+//Vi fortæller at den skal tage nr 0 (m) og 2(n). 
+//Så siger vi at de skal være små, men at str array nr 2 (n), slal være et stort bogsatav. 
+//Så vi tager "næsten" hvert bogstav for at lave dem om til de store og små vi ønsker. 
 console.log(str.substring(0, 2).toLowerCase() + str[2].toUpperCase() + str.substring(3).toLowerCase());
+
+//Nu tager vi 0 (m), og fortæller at det skal vlre stort, og at resren skal være små bogstaver. 
 console.log(str[0].toLocaleUpperCase() + str.substring(1).toLocaleLowerCase());
 
 
