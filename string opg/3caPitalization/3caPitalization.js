@@ -7,30 +7,35 @@
 
 // Make sure that it also works with longer names. Don't worry about names shorter than 3 characters.
 
-const navn = {
-    person: { text: "Peter", location: ".fullName" }
-  };
+const str = "MonA";
+console.log(str.substring(0, 2).toLowerCase() + str[2].toUpperCase() + str.substring(3).toLowerCase());
+console.log(str[0].toLocaleUpperCase() + str.substring(1).toLocaleLowerCase());
+
+
+// const navn = {
+//     person: { text: "Peter", location: ".fullName" }
+//   };
   
-  console.log(navn.person.text); 
+//   console.log(navn.person.text); 
 
-  const lille = document.querySelector(navn.person.location);
+//   const lille = document.querySelector(navn.person.location);
 
-  if (lille) {
-    lille.textContent = navn.person.text;
-  }
+//   if (lille) {
+//     lille.textContent = navn.person.text;
+//   }
 
-  const peTer = {
-    person: { text: "Peter", location: ".fullNameStortT" }
-  };
-  console.log(peTer.person.text); 
+//   const peTer = {
+//     person: { text: "Peter", location: ".fullNameStortT" }
+//   };
+//   console.log(peTer.person.text); 
 
-  const index = 2;
-  console.log(`bogstav nr.: ${index} er ${peTer.person.text.charAt(index)}`);
+//   const index = 2;
+//   console.log(`bogstav nr.: ${index} er ${peTer.person.text.charAt(index)}`);
     
-  console.log(peTer.person.text.charAt(index).toLocaleUpperCase());
+//   console.log(peTer.person.text.charAt(index).toLocaleUpperCase());
 
-  const stort = document.querySelector(peTer.person.location);
+//   const stort = document.querySelector(peTer.person.location);
 
-  if (stort) {
-    stort.textContent = peTer.person.text;
-  }
+//   if (stort) {
+//     stort.textContent = peTer.person.text;
+//   }
