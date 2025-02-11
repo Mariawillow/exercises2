@@ -31,6 +31,7 @@ function skiftOrd() {
        //Og siger vi skal bruge //Good
         .join(`<span>${word.good}</span>`);
     })
+    //Knappen der skal vise den dialog der kommer op, hvis det allerede er skiftet
     //
 document.querySelector("button").addEventListener("click", alleredeGode);
 function alleredeGode(){
