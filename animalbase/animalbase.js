@@ -94,6 +94,46 @@ function isDog(animal){
 }
 
 
+//Vi laver en funktion som skal vise hvad der skal ske,
+//alt efter hvad man skriver i konsollen:
+function sortList(sortBy){
+    //Som udgangspunkt skal alle dyr vises 
+    let sortedList = allAnimals;
+
+    //Hvis sortBy er li name skal den sortete i rækkefølge a-å.
+    if(sortBy === "name"){
+        sortedList = sortedList.sort(sortByName);
+
+    } else if (sortBy === "type"){
+        sortedList = sortedList.sort(sortByType);
+
+    }
+    displayList(sortedList);
+}
+
+//funktionen sortByName viser funktionen for rækkefølgen af dyr
+function sortByName (animalA, animalB){
+    //hvis animalA er mindre en animalB betyder alfabetisk.
+    //Det vil sige hvis a er før b skal den gå ind i if sætningerne:
+    if(animalA.name < animalB.name){
+        //Hvis animalA.name er mindre (dvs. kommer før animalB.name i alfabetet), returnerer vi 1.
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+function sortByType (animalA, animalB){
+    if(animalA.type < animalB.type){
+        return 1;
+    } else {
+        return -1;
+    }
+
+}
+
+
+
 function displayList(animals) {
     // clear the list
     document.querySelector("#list tbody").innerHTML = "";
