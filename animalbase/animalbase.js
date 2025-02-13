@@ -27,6 +27,12 @@ function registerButtons(){
     document.querySelectorAll("[data-action= 'filter']")
     //Her fortælles der at for hvert knap skal den føre til funktionen selectFilter ved klik. 
     .forEach(buttons => buttons.addEventListener("click", selectFilter));
+
+     //Den tager fat i data.action atrubutterne for det er det de hedder i html. 
+     //Der henter den sort
+     document.querySelectorAll("[data-action= 'sort']")
+     //Her fortælles der at for hvert knap skal den føre til funktionen selectSort ved klik. 
+     .forEach(buttons => buttons.addEventListener("click", selectSort));
 } 
 
 
@@ -93,6 +99,16 @@ function isDog(animal){
     return animal.type === "dog";
 }
 
+//Så starter selectSort funktionen:
+function selectSort(event){
+    //Jeg laver en variabel som hedder sortBy, som igen kigger på vores HTML med vores event.
+    const sortBy = event.target.dataset.sort;
+    //Vi udskriver det i konsollen, så vi kan se om den tager fat i de rigtige filtreringer. 
+    console.log(`User selected ${sortBy}`);
+    //Til sidst kan vi så koble vores sortList som filtrere dyrene, og sætte dem sammen med sort.
+    sortList(sortBy);
+}
+
 
 //Vi laver en funktion som skal vise hvad der skal ske,
 //alt efter hvad man skriver i konsollen:
@@ -100,28 +116,31 @@ function sortList(sortBy){
     //Som udgangspunkt skal alle dyr vises 
     let sortedList = allAnimals;
 
-    //Hvis sortBy er li name skal den sortete i rækkefølge a-å.
-    if(sortBy === "name"){
-        sortedList = sortedList.sort(sortByName);
-
-    } else if (sortBy === "type"){
-        sortedList = sortedList.sort(sortByType);
-
+    sortedList = sortedList.sort(sortByProterty);
+    //funktionen sortByName viser funktionen for rækkefølgen af dyr
+    function sortByProterty(animalA, animalB){
+        console.log(`${sortBy}`);
+             //hvis animalA er mindre en animaxlB betyder alfabetisk.
+            //Det vil sige hvis a er før b skal den gå ind i if sætningerne:
+        if(animalA[sortBy] < animalB[sortBy]) {
+            //Hvis animalA.name er mindre (dvs. kommer før animalB.name i alfabetet), returnerer vi 1.
+            return -1;
+        } else {
+            return 1;
+        }
     }
+    //Hvis sortBy er li name skal den sortete i rækkefølge a-å.
+           //Vi fjerne if sætnigerne, for vi vil have dem til at være derhele tiden. 
+    // if(sortBy === "name"){
+        // sortedList = sortedList.sort(sortByName);
+
+    // } else if (sortBy === "type"){
+    //     sortedList = sortedList.sort(sortByType);
+
+    // }
     displayList(sortedList);
 }
 
-//funktionen sortByName viser funktionen for rækkefølgen af dyr
-function sortByName (animalA, animalB){
-    //hvis animalA er mindre en animalB betyder alfabetisk.
-    //Det vil sige hvis a er før b skal den gå ind i if sætningerne:
-    if(animalA.name < animalB.name){
-        //Hvis animalA.name er mindre (dvs. kommer før animalB.name i alfabetet), returnerer vi 1.
-        return 1;
-    } else {
-        return -1;
-    }
-}
 
 function sortByType (animalA, animalB){
     if(animalA.type < animalB.type){
@@ -129,7 +148,6 @@ function sortByType (animalA, animalB){
     } else {
         return -1;
     }
-
 }
 
 
