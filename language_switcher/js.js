@@ -27,10 +27,10 @@ const texts = {
 //   texts[locale].texts.forEach(element => {
 //     document.querySelector(element.location).textContent = element.texts;
 //   });
-
+ 
 // }
 
-// let locale = "da";
+let locale = "da";
 
 
 
