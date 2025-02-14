@@ -59,6 +59,7 @@ select{
     background-color: var(--select);
     border-radius: 20px;
     margin-top: 10px;
+    border-style: none;
 }
 
 
