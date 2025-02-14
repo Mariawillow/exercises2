@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr;
 }
 
-body[data-filters="Lys"]{
+body[data-theme="Lys"]{
     --background-bg: antiquewhite;
     --h1-bg: brown;
     --footer-bg:rgb(245, 220, 138) ;
@@ -12,7 +12,7 @@ body[data-filters="Lys"]{
     --select: rgb(239, 168, 92);
 }
 
-body[data-filters="Moerk"]{
+body[data-theme="Mørk"]{
     --background-bg: rgb(106, 100, 92);
     --h1-bg: rgb(226, 186, 186);
     --footer-bg:rgb(46, 44, 38) ;
@@ -21,7 +21,7 @@ body[data-filters="Moerk"]{
     --select: rgb(129, 96, 61);
 }
 
-body[data-filters="Farverig"]{
+body[data-theme="Farverig"]{
     --background-bg: rgb(230, 146, 140);
     --h1-bg: rgb(202, 240, 105);
     --footer-bg:rgb(79, 208, 215) ;
