@@ -103,18 +103,35 @@ function isDog(animal){
 function selectSort(event){
     //Jeg laver en variabel som hedder sortBy, som igen kigger på vores HTML med vores event.
     const sortBy = event.target.dataset.sort;
+    const sortDir = event.target.dataset.sortDirection;
+//Toggel direction:
+//Vi laver en sortering af vores datase direction. 
+//Det vil sige at den nu ved at hvis vi klikker på datasæt og den er på desc skal den lave den om til asc. 
+//så den ændre (laver modsat rækkefølge - høj til lav og omvendt) på række følgen af dyrene. 
+if (sortDir === "asc"){
+    event.target.dataset.sortDirection = "desc";
+}else {
+    event.target.dataset.sortDirection = "asc";
+}
+
     //Vi udskriver det i konsollen, så vi kan se om den tager fat i de rigtige filtreringer. 
-    console.log(`User selected ${sortBy}`);
+    console.log(`User selected ${sortBy} - ${sortDir}`);
     //Til sidst kan vi så koble vores sortList som filtrere dyrene, og sætte dem sammen med sort.
-    sortList(sortBy);
+    sortList(sortBy, sortDir);
 }
 
 
 //Vi laver en funktion som skal vise hvad der skal ske,
 //alt efter hvad man skriver i konsollen:
-function sortList(sortBy){
+function sortList(sortBy, sortDir){
     //Som udgangspunkt skal alle dyr vises 
     let sortedList = allAnimals;
+    //Vi laver en variable som fortæøller hvilke rækkefølge de skal komme i: 
+    let direction = -1;
+if (sortDir === "desc"){
+    direction = -1;
+}else {direction = 1;
+}
 
     sortedList = sortedList.sort(sortByProterty);
     //funktionen sortByName viser funktionen for rækkefølgen af dyr
@@ -124,9 +141,10 @@ function sortList(sortBy){
             //Det vil sige hvis a er før b skal den gå ind i if sætningerne:
         if(animalA[sortBy] < animalB[sortBy]) {
             //Hvis animalA.name er mindre (dvs. kommer før animalB.name i alfabetet), returnerer vi 1.
-            return -1;
+            //Vi kommer * direction på vores værdier, for at de ved hvad de skal reagere på. 
+            return -1 * direction;
         } else {
-            return 1;
+            return 1 * direction;
         }
     }
     //Hvis sortBy er li name skal den sortete i rækkefølge a-å.
